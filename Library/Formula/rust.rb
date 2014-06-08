@@ -23,7 +23,7 @@ class Rust < Formula
     args << "--disable-rpath" if build.head?
     args << "--enable-clang" if ENV.compiler == :clang
     system "./configure", *args
-    system "make"
+    system "make -j4"
     system "make install"
   end
 
